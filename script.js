@@ -16,7 +16,7 @@ let users = [
     password: '1847'
   }
 ];
-function autorisation () {
+function autorisation() {
   let name = prompt('Enter your name');
   let pass = prompt('Enter your password');
   let x = false;
@@ -28,8 +28,12 @@ function autorisation () {
       }
     }
     if (!x) {
-    alert('Wrong login or password');
-    autorisation();
+      let n = confirm('Wrong login or password, again?');
+      if (n == true) {
+        autorisation();
+      } else {
+        alert('Cancelled');
+      }
   }
 }
 autorisation();
